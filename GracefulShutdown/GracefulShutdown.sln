@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GracefulShutdown", "GracefulShutdown.csproj", "{CA116A03-9EA7-43B3-BA4C-A7C09244BD73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA116A03-9EA7-43B3-BA4C-A7C09244BD73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA116A03-9EA7-43B3-BA4C-A7C09244BD73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA116A03-9EA7-43B3-BA4C-A7C09244BD73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA116A03-9EA7-43B3-BA4C-A7C09244BD73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D5C0815-85AD-4314-BCDC-4A4BC516959C}
+	EndGlobalSection
+EndGlobal
