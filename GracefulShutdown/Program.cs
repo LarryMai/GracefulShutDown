@@ -22,15 +22,17 @@ namespace GracefulShutdown
         /// </summary>
         static void Main(string[] args)
         {
+            _logger.Info("begin to init ...");
             AssemblyLoadContext.Default.Unloading += ctx =>
             {
                 if (!_sigintReceived)
                 {
                     _logger.Info("recieved SIGTERM");
+                    _sigintReceived = true;
                 }
                 else
                 {
-                    _logger.Info("[AssemblyLoadContext.Default.Unloading] get SIGINT，skip SIGTERM");
+                    _logger.Info("get SIGTERM，skip SIGTERM");
                 }
             };
 
@@ -38,11 +40,12 @@ namespace GracefulShutdown
             {
                 if (!_sigintReceived)
                 {
-                    _logger.Info("已接收 SIGTERM");
+                    _logger.Info("recieved SIGTERM");
+                    _sigintReceived = true;
                 }
                 else
                 {
-                    _logger.Info("[AppDomain.CurrentDomain.ProcessExit] get SIGINT，skip SIGTERM");
+                    _logger.Info("get SIGTERM，skip SIGTERM");
                 }
             };
 
@@ -53,7 +56,7 @@ namespace GracefulShutdown
                 _sigintReceived = true;
             };
 
-            
+            _logger.Info("init completed");
             while (!_sigintReceived)
             {
                 Thread.Sleep(1000);
