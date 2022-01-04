@@ -22,11 +22,13 @@ namespace GracefulShutdown
         /// </summary>
         static void Main(string[] args)
         {
+            Console.WriteLine("begin to init ...");
             _logger.Info("begin to init ...");
             AssemblyLoadContext.Default.Unloading += ctx =>
             {
                 if (!_sigintReceived)
                 {
+                    Console.WriteLine($"recieved SIGTERM by { nameof(AssemblyLoadContext.Default.Unloading)}");
                     _logger.Info("recieved SIGTERM");
                     _sigintReceived = true;
                 }
@@ -40,6 +42,7 @@ namespace GracefulShutdown
             {
                 if (!_sigintReceived)
                 {
+                    Console.WriteLine($"recieved SIGTERM by { nameof(AppDomain.CurrentDomain.ProcessExit)}");
                     _logger.Info("recieved SIGTERM");
                     _sigintReceived = true;
                 }
@@ -52,6 +55,7 @@ namespace GracefulShutdown
             Console.CancelKeyPress += (sender, e) =>
             {
                 e.Cancel = true;
+                Console.WriteLine("get SIGINT from (Ctrl+C)");
                 _logger.Info("get SIGINT from (Ctrl+C)");
                 _sigintReceived = true;
             };
