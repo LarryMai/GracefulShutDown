@@ -1,0 +1,12 @@
+#naon /etc/systemd/system/tangram_agent.service
+[Unit]
+Description=auto run of tangram agent
+Before=shutdown.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/graceful_shutdown
+ExecStart=/opt/graceful_shutdown/run.sh
+KillMode=mixed
+[Install]
+WantedBy=multi-user.target
