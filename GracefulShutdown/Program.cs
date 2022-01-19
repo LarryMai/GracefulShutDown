@@ -22,6 +22,7 @@ namespace GracefulShutdown
         /// </summary>
         static void Main(string[] args)
         {
+            Console.WriteLine("begin to init ...");
             _logger.Info("begin to init ...");
             AssemblyLoadContext.Default.Unloading += ctx =>
             {
@@ -52,6 +53,7 @@ namespace GracefulShutdown
             Console.CancelKeyPress += (sender, e) =>
             {
                 e.Cancel = true;
+                Console.WriteLine("get SIGINT from (Ctrl+C)");
                 _logger.Info("get SIGINT from (Ctrl+C)");
                 _sigintReceived = true;
             };
