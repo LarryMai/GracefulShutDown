@@ -27,7 +27,7 @@ namespace GracefulShutdown
             {
                 if (!_sigintReceived)
                 {
-                    _logger.Info("recieved SIGTERM");
+                    _logger.Info("recieved SIGTERM#1");
                     _sigintReceived = true;
                 }
                 else
@@ -40,7 +40,7 @@ namespace GracefulShutdown
             {
                 if (!_sigintReceived)
                 {
-                    _logger.Info("recieved SIGTERM");
+                    _logger.Info("recieved SIGTERM#2");
                     _sigintReceived = true;
                 }
                 else

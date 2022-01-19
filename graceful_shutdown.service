@@ -7,6 +7,7 @@ Before=shutdown.target
 User=root
 WorkingDirectory=/opt/graceful_shutdown
 ExecStart=/opt/graceful_shutdown/run.sh
-KillMode=mixed
+Restart=on-failure
+KillSignal=SIGTERM
 [Install]
 WantedBy=multi-user.target
